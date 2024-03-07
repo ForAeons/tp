@@ -8,9 +8,9 @@
         "about-us": "About Us",
         "project-team": "Project team",
         "ethan-wei-yuxin": "Ethan Wei Yuxin",
-        "sai-utkarsh": "Sai UtKarsh",
+        "sai-utkarsh": "Sai Utkarsh",
         "titus-chew": "Titus Chew",
-        "wu-xiao-yun": "Wu Xiao Yun",
+        "wu-xiaoyun": "Wu Xiaoyun",
         "anant-shanker": "Anant Shanker"
       },
       "headingKeywords": {}
@@ -107,7 +107,7 @@
       "src": "UserGuide.md",
       "title": "User Guide",
       "headings": {
-        "ab-3-user-guide": "AB-3 User Guide",
+        "tapro-user-guide": "TAPro User Guide",
         "quick-start": "Quick start",
         "features": "Features",
         "viewing-help-help": "Viewing help : help",
