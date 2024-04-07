@@ -56,7 +56,7 @@ A GUI similar to the below image should appear in a few seconds. Note how the ap
 
 * `list` : Lists all contacts.
 
-* `addstu nn/e0952224 n/John Doe p/98765432 e/johnd@example.com m/Dentistry, block 123, #01-01` : Adds a student named `John Doe` to the contact book.
+* `addstu nn/e0952224 n/John Doe p/98765432 e/johnd@example.com m/Dentistry` : Adds a student named `John Doe` to the contact book.
 
 * `delstu nn/NUSNET_ID` : Deletes the student with the specified `NUSNET_ID` from the contact book.
 
