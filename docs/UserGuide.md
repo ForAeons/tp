@@ -56,7 +56,7 @@ A GUI similar to the below image should appear in a few seconds. Note how the ap
 
 * `list` : Lists all contacts.
 
-* `addstu nn/e0952224 n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a student named `John Doe` to the contact book.
+* `addstu nn/e0952224 n/John Doe p/98765432 e/johnd@example.com m/Dentistry, block 123, #01-01` : Adds a student named `John Doe` to the contact book.
 
 * `delstu nn/NUSNET_ID` : Deletes the student with the specified `NUSNET_ID` from the contact book.
 
@@ -208,8 +208,8 @@ Format: `addstu n/NAME p/PHONE_NUMBER e/EMAIL nn/NUSNET_ID m/MAJOR [t/TAG]…​
 </box>
 
 Examples:
-* `addstu n/John Doe nn/e1234567 p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
-* `addstu n/Betsy Crowe nn/e01234567 t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
+* `addstu n/John Doe nn/e1234567 p/98765432 e/johnd@example.com m/Business Administration`
+* `addstu n/Betsy Crowe nn/e01234567 t/friend e/betsycrowe@example.com m/Law p/1234567 t/criminal`
 * `addstu n/Betsy Crowe nn/e01234567`
 
 <markdown class="d-print-none">---</markdown>
@@ -517,16 +517,16 @@ If you move the application to a secondary screen, and later switch to using onl
 
 ## Command summary
 
-| Action             | Format, Examples                                                                                                                                                                                |
-|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add Student**    | `addstu n/NAME p/PHONE_NUMBER e/EMAIL nn/NUSNET_ID m/MAJOR [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com nn/e1234567 a/123, Clementi Rd, 1234665 t/friend t/colleague` |
-| **Clear**          | `clear`                                                                                                                                                                                         |
-| **Delete Student** | `delstu nn/NUSNET_ID`<br> e.g., `delstu nn/e0957499`                                                                                                                                            |
-| **Edit**           | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [m/MAJOR] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                       |
-| **Mark**           | `mark nn/NUSNET_ID wk/WEEK_NUMBER`<br> e.g., `mark nn/e1234567 wk/3`                                                                                                                            |
-| **Unmark**         | `unmark nn/NUSNET_ID wk/WEEK_NUMBER`<br> e.g., `unmark nn/e1234567 wk/3`                                                                                                                        |
-| **Find**           | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                      |
-| **Set Course**     | `setcrs COURSE_NAME`                                                                                                                                                                            |
-| **List**           | `list`                                                                                                                                                                                          |
-| **Help**           | `help`                                                                                                                                                                                          |
-| **Exit**           | `exit`                                                                                                                                                                                          |
+| Action             | Format, Examples                                                                                                                                                              |
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add Student**    | `addstu n/NAME p/PHONE_NUMBER e/EMAIL nn/NUSNET_ID m/MAJOR [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com nn/e1234567 m/Nursing t/friend t/colleague` |
+| **Clear**          | `clear`                                                                                                                                                                       |
+| **Delete Student** | `delstu nn/NUSNET_ID`<br> e.g., `delstu nn/e0957499`                                                                                                                          |
+| **Edit**           | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [m/MAJOR] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                     |
+| **Mark**           | `mark nn/NUSNET_ID wk/WEEK_NUMBER`<br> e.g., `mark nn/e1234567 wk/3`                                                                                                          |
+| **Unmark**         | `unmark nn/NUSNET_ID wk/WEEK_NUMBER`<br> e.g., `unmark nn/e1234567 wk/3`                                                                                                      |
+| **Find**           | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                    |
+| **Set Course**     | `setcrs COURSE_NAME`                                                                                                                                                          |
+| **List**           | `list`                                                                                                                                                                        |
+| **Help**           | `help`                                                                                                                                                                        |
+| **Exit**           | `exit`                                                                                                                                                                        |
