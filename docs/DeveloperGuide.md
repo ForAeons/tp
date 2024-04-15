@@ -136,8 +136,6 @@ call as an example.
    Note that although this is shown as a single step in the diagram above (for simplicity), in the code it can take several interactions (between the command object and the `Model`) to achieve.
 1. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
 
-<br>
-
 **How autocomplete execution works in `Logic` component:**
 
 1. When `Logic` is called upon to autocomplete an input string, it is passed to an `AddressBookParser` object which in turn matches the input and return the corresponding autocomplete object (e.g. `AutoCompleteCommand`).
