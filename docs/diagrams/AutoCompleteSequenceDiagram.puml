@@ -1,0 +1,53 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box UI UI_COLOR_T1
+participant ":CommandBox" as CBox UI_COLOR
+participant ":MainWindow" as MW UI_COLOR
+participant ":Logic" as Logic UI_COLOR
+participant ":AddressBookParser" as Parser UI_COLOR
+participant ":AutoCompleteCommand" as ModelAC UI_COLOR
+end box
+
+[-> CBox : keyPress(e)
+activate CBox
+
+CBox -> CBox : handleKeyPressEvent(e)
+activate CBox
+
+CBox -> CBox : handleTabKeyPressEvent(e)
+activate CBox
+
+CBox -> MW : getAutoComplete(String)
+activate MW
+
+MW -> Logic : autoComplete(String)
+activate Logic
+
+Logic -> Parser : parseAutoComplete(String)
+activate Parser
+
+create ModelAC
+Parser -> ModelAC
+activate ModelAC
+
+ModelAC --> Parser
+deactivate ModelAC
+
+Parser --> Logic : getAutoComplete(String)
+deactivate Parser
+
+Logic --> MW
+deactivate Logic
+
+MW --> CBox
+deactivate MW
+
+CBox -> CBox : setText(String)
+deactivate CBox
+
+[<-- CBox
+deactivate CBox
+
+@enduml

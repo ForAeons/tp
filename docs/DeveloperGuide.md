@@ -143,7 +143,7 @@ call as an example.
 1. When `Logic` is called upon to autocomplete an input string, it is passed to an `AddressBookParser` object which in turn matches the input and return the corresponding autocomplete object (e.g. `AutoCompleteCommand`).
 1. This results in a `AutoComplete` object (more precisely, an object of one of its subclasses e.g., `AutoCompleteCommand`) which is executed by the `LogicManager`.
 1. The autocomplete object is solely responsible for generating the autocomplete suggestions based on the input string (e.g. the additional characters that can be appended to the input string).
-1. The result of the autocompletion is simply a string that autocompletes the input string. Autocomplete classes uses [Trie](#trie) under the hood to efficiently generate the autocomplete suggestions.
+1. Autocomplete classes uses [Trie](#trie) under the hood to efficiently generate the autocomplete suggestions.
 
 Here are the other classes in `Logic` (omitted from the class diagram above) that are used for parsing a user command:
 
@@ -214,7 +214,23 @@ This section describes some noteworthy details on how certain features are imple
 <markdown class="d-print-none">---</markdown>
 <br>
 
-### Autocomplete Feature
+### Autocompletion Feature
+
+TAPro command execution works by parsing user command keyword followed by arguments. Autocompletion feature is implemented in a similar way, namely autocompletion of user commands (Autocomplete Command) and arguments (Autocomplete Prefix).
+
+Both implementation uses [Trie](https://www.geeksforgeeks.org/trie-insert-and-search/) data structure to store the possible completions and power efficient lookups. The Trie is built by adding all possible completions to the Trie. The Trie is then used to find the possible completions for a given prefix.
+
+#### Autocomplete Command
+
+- On app initialization, the `initialize` static method on `AutocompleteCommand` is called to build the `Trie` with all commands available to the user.
+- When the user types a command and presses the autocomplete hotkey, the `CommandBox` calls the `getAutoComplete` method on `AutocompleteCommand` is called with the current user input.
+- The `Trie` is then used to find the possible completions for the given prefix.
+- The possible completions are then returned to the `CommandBox`, which displays the first completion in the command box.
+
+The following sequence diagram shows how the autocomplete command feature works:
+<puml src="diagrams/AutoCompleteSequenceDiagram.puml" alt="Auto complete sequence diagram" />
+
+#### Autocomplete Prefix
 
 **TODO**
 
